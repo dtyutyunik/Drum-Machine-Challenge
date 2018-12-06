@@ -6,6 +6,8 @@ class Button extends Component {
       <div
       // Add additional attributes here
         className='button'
+        id={this.props.id}
+        sounds={this.props.sound}
         onClick={this.props.playSound}
       >
 
