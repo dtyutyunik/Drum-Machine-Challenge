@@ -51,6 +51,7 @@ class App extends Component {
     //code to be run when click event is fired goes below this line!
     console.log("eventObj", eventObj.currentTarget.id);
     const sound= eventObj.currentTarget.id;
+    Sounds[sound].currentTime=0;
     Sounds[sound].play();
   }
 
@@ -60,7 +61,7 @@ class App extends Component {
     const buttonlist= [];
 
     for(let i=0;i<16;i++){
-      buttonlist.push(<Button
+      buttonlist.push(<Button key={this.state.sounds[i]}
         id={this.state.sounds[i]}
         sound={this.state.sounds[i]}
         playSound={this.playSound}
